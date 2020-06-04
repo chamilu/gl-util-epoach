@@ -1,6 +1,8 @@
 body {
     // font-family: "Roboto", sans-serif;
     font-family: "PT Mono", monospace;
+    // background-color: #292936;
+    background-color: #222f3e;
 
     #wrapper {
         width: 320px;
@@ -8,16 +10,17 @@ body {
 
         h1 {
             font-size: 50px;
-            margin: 70px 0;
+            margin: 120px 0 70px;
+            color: #ffffff;
         }
 
         .big {
             font-size: 60px;
-            color: #444;
+            color: #eeeeee;
         }
 
         .field {
-            color: #444;
+            color: #eeeeee;
             padding-left: 5px;
             padding-bottom: 10px;
         }
