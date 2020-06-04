@@ -7,8 +7,8 @@ const Date = () => {
     const date = today.diff(epoach, "days");
 
     return (
-        <div className="margin-b-40">
-            <div>date: </div>
+        <div id="date-wrapper">
+            <div className="field">Date:</div>
             <div className="big">{date}</div>
         </div>
     );

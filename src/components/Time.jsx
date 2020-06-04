@@ -14,12 +14,12 @@ const Time = () => {
         getTime();
         setInterval(() => {
             getTime();
-        }, 5000);
+        }, 3000);
     }, []);
 
     return (
         <div>
-            <div>time: </div>
+            <div className="field">Time:</div>
             <div className="big">{time}</div>
         </div>
     );

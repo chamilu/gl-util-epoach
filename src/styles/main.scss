@@ -1,5 +1,6 @@
 body {
-    font-family: "Roboto", sans-serif;
+    // font-family: "Roboto", sans-serif;
+    font-family: "PT Mono", monospace;
 
     #wrapper {
         width: 400px;
@@ -7,14 +8,22 @@ body {
 
         h1 {
             font-size: 50px;
+            margin: 70px 0;
         }
 
         .big {
-            font-size: 50px;
+            font-size: 60px;
+            color: #444;
+        }
+
+        .field {
+            color: #444;
+            padding-left: 5px;
+            padding-bottom: 10px;
         }
     }
 }
 
-.margin-b-40 {
-    margin-bottom: 40px;
+#date-wrapper {
+    margin-bottom: 60px;
 }
