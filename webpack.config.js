@@ -1,6 +1,7 @@
 const Path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = () => ({
     entry: { main: "./src/index.js" },
@@ -13,13 +14,34 @@ const config = () => ({
         new HtmlWebpackPlugin({
             template: "./src/index.html",
             filename: "index.html"
-        })
+        }),
+        new MiniCssExtractPlugin()
     ],
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                loader: "babel-loader",
+                exclude: /node_modules/
+            },
+            {
+                test: /\.scss$/,
+                use: ["style-loader", "css-loader", "sass-loader"]
+            },
+            {
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, "css-loader"]
+            }
+        ]
+    },
+    resolve: {
+        extensions: [".js", ".jsx"]
+    },
     devServer: {
         port: 3000,
         host: "localhost",
         hot: true,
-        open: true,
+        open: false,
         historyApiFallback: true,
         watchOptions: {
             ignored: /node_modules/
