@@ -14,7 +14,7 @@ const Time = () => {
         getTime();
         setInterval(() => {
             getTime();
-        }, 3000);
+        }, 4000);
     }, []);
 
     return (
