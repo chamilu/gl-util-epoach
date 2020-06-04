@@ -6,7 +6,7 @@ import Time from "./Time";
 const App = () => {
     return (
         <div id="wrapper">
-            <h1>epoach</h1>
+            <h1>epoch</h1>
             <Date />
             <Time />
         </div>
