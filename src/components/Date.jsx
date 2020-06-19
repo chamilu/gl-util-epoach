@@ -7,7 +7,7 @@ const Date = () => {
     const getDate = () => {
         const epoach = moment("1970-01-01").format("YYYY-MM-DD");
         const today = moment();
-        const value = today.diff(epoach, "days");
+        const value = today.diff(epoach, "days") - 1;
         setDate(value);
     };
 
