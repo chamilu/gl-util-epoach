@@ -25,9 +25,27 @@ body {
             padding-left: 5px;
             padding-bottom: 10px;
         }
+
+        .field-small {
+            color: #eeeeee;
+            padding-left: 5px;
+            font-size: 12px;
+            padding-bottom: 10px;
+        }
     }
 }
 
-#date-wrapper {
+.margin-b {
     margin-bottom: 60px;
+}
+
+.text {
+    outline: none;
+    border: 5px solid #1c2733;
+    font-family: "PT Mono", monospace;
+    font-size: 20px;
+    padding: 10px;
+    width: 265px;
+    background-color: #354961;
+    color: #c5c5c5;
 }

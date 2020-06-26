@@ -2,6 +2,7 @@ import React from "react";
 
 import Date from "./Date";
 import Time from "./Time";
+import SecondsToDate from "./SecondsToDate";
 
 const App = () => {
     return (
@@ -9,6 +10,7 @@ const App = () => {
             <h1>epoch</h1>
             <Date />
             <Time />
+            <SecondsToDate />
         </div>
     );
 };
