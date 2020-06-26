@@ -14,7 +14,7 @@ function SecondsToDate() {
     };
     return (
         <div className="margin-b">
-            <div className="field">Get current DateTime: (*beta)</div>
+            <div className="field">*Get DateTime by milliseconds:</div>
             <div style={{ marginBottom: 10 }}>
                 <input
                     className="text"
