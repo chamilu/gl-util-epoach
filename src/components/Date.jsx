@@ -19,7 +19,7 @@ const Date = () => {
     }, []);
 
     return (
-        <div id="date-wrapper">
+        <div className="margin-b">
             <div className="field">Date:</div>
             <div className="big">{date}</div>
         </div>

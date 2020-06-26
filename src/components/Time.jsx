@@ -18,7 +18,7 @@ const Time = () => {
     }, []);
 
     return (
-        <div>
+        <div className="margin-b">
             <div className="field">Time:</div>
             <div className="big">{time}</div>
         </div>
