@@ -18,12 +18,22 @@ body {
             font-size: 60px;
             color: #eeeeee;
             cursor: pointer;
+
+            &:active {
+                text-decoration: underline;
+            }
         }
 
         .field {
             color: #eeeeee;
             padding-left: 5px;
             padding-bottom: 10px;
+
+            .field-notice {
+                color: #b6c4d3;
+                font-size: 12px;
+                padding-bottom: 5px;
+            }
         }
 
         .field-small {

@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 
+import Utils from "../utils";
+
 const Date = () => {
-    const [date, setDate] = useState(0);
+    const [state, setState] = useState({
+        date: 0
+    });
 
     const getDate = () => {
         const epoach = moment("1970-01-01").format("YYYY-MM-DD");
         const today = moment();
         const value = today.diff(epoach, "days");
-        setDate(value);
+        setState({
+            ...state,
+            date: value,
+            stateText: ""
+        });
     };
 
     useEffect(() => {
@@ -18,10 +26,42 @@ const Date = () => {
         }, 60 * 1000);
     }, []);
 
+    const onTextClick = (textToCopy) => {
+        Utils.copyToClipboard(textToCopy);
+        setState({
+            ...state,
+            stateText: "copied"
+        });
+    };
+
+    const onMouseEnter = () => {
+        setState({
+            ...state,
+            stateText: "click to copy"
+        });
+    };
+
+    const onMouseLeave = () => {
+        setState({
+            ...state,
+            stateText: ""
+        });
+    };
+
     return (
         <div className="margin-b">
-            <div className="field">Date:</div>
-            <div className="big">{date}</div>
+            <div className="field">
+                Date: <span className="field-notice"> {state.stateText}</span>
+            </div>
+
+            <div
+                className="big"
+                onClick={(e) => onTextClick(state.date)}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+            >
+                {state.date}
+            </div>
         </div>
     );
 };
