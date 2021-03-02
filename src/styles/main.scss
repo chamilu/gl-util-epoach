@@ -23,6 +23,12 @@ body {
             &:active {
                 text-decoration: underline;
             }
+
+            &.date-to-epoch {
+                font-size: 40px;
+                float: left;
+                padding-top: 3px;
+            }
         }
 
         .field {
@@ -62,3 +68,4 @@ body {
 }
 
 @import "./menu-wrapper.scss";
+@import "./forms.scss";
