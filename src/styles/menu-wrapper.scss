@@ -1,0 +1,20 @@
+.menu-wrapper {
+    color: #fff;
+    padding-top: 11px;
+    position: absolute;
+    left: -97px;
+
+    .icon {
+        display: inline-block;
+        cursor: pointer;
+        border: 1px solid transparent;
+        margin-left: 5px;
+
+        &.selected,
+        &:hover {
+            border-bottom: 3px solid #f54848;
+            color: #f54848;
+            transition: color 0.3s;
+        }
+    }
+}
