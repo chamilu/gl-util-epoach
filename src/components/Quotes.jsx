@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import randomQuotes from "random-quotes";
 
 const Quotes = () => {
-    const quote = randomQuotes();
+    const [quote, setQuote] = useState(randomQuotes());
+
+    setInterval(() => {
+        setQuote(randomQuotes());
+    }, 1000 * 60);
+
     return (
-        <p className="quote">
+        <p className="quote" onClick={() => setQuote(randomQuotes())}>
             {quote.body} ({quote.author})
         </p>
     );
