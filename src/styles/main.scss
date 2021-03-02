@@ -7,6 +7,7 @@ body {
     #wrapper {
         width: 320px;
         margin: 0 auto;
+        position: relative;
 
         h1 {
             font-size: 50px;
@@ -59,3 +60,5 @@ body {
     background-color: #354961;
     color: #c5c5c5;
 }
+
+@import "./menu-wrapper.scss";
