@@ -1,18 +1,23 @@
 body {
-    // font-family: "Roboto", sans-serif;
     font-family: "PT Mono", monospace;
-    // background-color: #292936;
     background-color: #222f3e;
 
     #wrapper {
-        width: 320px;
+        width: 340px;
         margin: 0 auto;
         position: relative;
 
         h1 {
             font-size: 50px;
-            margin: 120px 0 70px;
+            margin: 120px 0 0px;
             color: #ffffff;
+        }
+
+        .quote {
+            color: #ffffff;
+            font-size: 11px;
+            line-height: 15px;
+            cursor: pointer;
         }
 
         .big {
