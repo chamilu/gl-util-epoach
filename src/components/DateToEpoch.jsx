@@ -52,7 +52,7 @@ const DateToEpoch = () => {
     };
 
     return (
-        <div className="margin-b">
+        <div className="margin-b" style={{ overflow: "hidden" }}>
             <div className="field">
                 Date: <span className="field-notice"> {state.stateText}</span>
             </div>
@@ -63,6 +63,7 @@ const DateToEpoch = () => {
                         className="text epoch-date"
                         type="text"
                         value={state.dateText}
+                        maxLength="10"
                         placeholder="YYYY-MM-DD"
                         onChange={onDateChange}
                     />
