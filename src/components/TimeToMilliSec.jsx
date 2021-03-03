@@ -2,19 +2,18 @@ import React, { useState } from "react";
 import moment from "moment";
 
 import Utils from "../utils";
+import { TIME_FORMAT } from "../utils/constants";
 
-const DateToEpoch = () => {
-    const getEpochDate = (value) => {
-        if (value) {
-            const providedDate = moment(value, "YYYY-MM-DD");
-            const baseDate = moment("1970-01-01", "YYYY-MM-DD");
-            return providedDate.diff(baseDate, "days");
-        }
+const TimeToMilliSec = () => {
+    const getTimeToMill = (value) => {
+        const time = moment(value, TIME_FORMAT);
+        const midNight = moment().clone().startOf("day");
+        return time.diff(midNight, "milliseconds");
     };
 
     const [state, setState] = useState({
-        epochDate: getEpochDate(moment().format("YYYY-MM-DD")),
-        dateText: moment().format("YYYY-MM-DD")
+        enteredTime: moment().format(TIME_FORMAT),
+        milliSecs: getTimeToMill(moment().format(TIME_FORMAT))
     });
 
     const onTextClick = (textToCopy) => {
@@ -41,20 +40,20 @@ const DateToEpoch = () => {
 
     const onDateChange = (e) => {
         const { value } = e.target;
-        const isValidDate = moment(value, "YYYY-MM-DD").isValid();
+        const isValidDate = moment(value, TIME_FORMAT).isValid();
 
         setState({
             ...state,
-            dateText: value,
-            epochDate:
-                isValidDate && value.length === 10 ? getEpochDate(value) : "-"
+            enteredTime: value,
+            milliSecs:
+                isValidDate && value.length === 8 ? getTimeToMill(value) : "-"
         });
     };
 
     return (
         <div className="margin-b" style={{ overflow: "hidden" }}>
             <div className="field">
-                Date: <span className="field-notice"> {state.stateText}</span>
+                Time: <span className="field-notice"> {state.stateText}</span>
             </div>
 
             <div>
@@ -62,9 +61,9 @@ const DateToEpoch = () => {
                     <input
                         className="text epoch-date"
                         type="text"
-                        value={state.dateText}
-                        maxLength="10"
-                        placeholder="YYYY-MM-DD"
+                        value={state.enteredTime}
+                        placeholder="HH:MM:SS"
+                        maxLength="8"
                         onChange={onDateChange}
                     />
                 </div>
@@ -75,15 +74,15 @@ const DateToEpoch = () => {
 
                 <div
                     className="big date-to-epoch"
-                    onClick={(e) => onTextClick(state.epochDate)}
+                    onClick={(e) => onTextClick(state.milliSecs)}
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
                 >
-                    {state.epochDate}
+                    {state.milliSecs}
                 </div>
             </div>
         </div>
     );
 };
 
-export default DateToEpoch;
+export default TimeToMilliSec;
