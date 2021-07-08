@@ -3,7 +3,7 @@ body {
     background-color: #222f3e;
 
     #wrapper {
-        width: 370px;
+        width: 385px;
         margin: 0 auto;
         position: relative;
 
@@ -20,6 +20,14 @@ body {
             cursor: pointer;
         }
 
+        .separator{ 
+            font-size: 40px;
+            color: #fff;
+            float: left;
+            line-height: 50px;
+
+        }
+
         .big {
             font-size: 60px;
             color: #eeeeee;
@@ -30,10 +38,13 @@ body {
             }
 
             &.date-to-epoch {
-                font-size: 40px;
+                font-size: 35px;
                 float: left;
                 padding-top: 3px;
+                line-height: 49px;
             }
+
+            
         }
 
         .field {
@@ -58,6 +69,9 @@ body {
 }
 
 .margin-b {
+    margin-bottom: 5px;
+}
+.margin-b-60 {
     margin-bottom: 60px;
 }
 

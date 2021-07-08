@@ -50,7 +50,7 @@ const MilliSecToTime = () => {
     return (
         <div className="margin-b" style={{ overflow: "hidden" }}>
             <div className="field">
-                Milliseconds: <span className="field-notice"> {state.stateText}</span>
+                {/* Milliseconds: <span className="field-notice"> {state.stateText}</span> */}
             </div>
 
             <div>
@@ -65,7 +65,7 @@ const MilliSecToTime = () => {
                     />
                 </div>
 
-                <div style={{ fontSize: "40px", color: "#fff", float: "left" }}>
+                <div className="separator">
                     :
                 </div>
 
