@@ -9,6 +9,7 @@ import Quotes from "./Quotes";
 import DateToEpoch from "./DateToEpoch";
 import SecondsToDate from "./SecondsToDate";
 import TimeToMilliSec from "./TimeToMilliSec";
+import MilliSecToTime from "./MilliSecToTime";
 
 const App = () => {
     const [view, setView] = useState(VIEWS.MAIN);
@@ -26,7 +27,8 @@ const App = () => {
             </div>
             <div style={{ display: view === VIEWS.REVERSE ? "block" : "none" }}>
                 <DateToEpoch />
-                <TimeToMilliSec />
+                <TimeToMilliSec />                
+                <MilliSecToTime />
             </div>
         </div>
     );
