@@ -67,7 +67,7 @@ const EpochToDate = () => {
                         type="text"
                         value={state.epochDate}
                         maxLength="5"
-                        placeholder="YYYY-MM-DD"
+                        placeholder="DDDDD"
                         onChange={onDateChange}
                     />
                 </div>
