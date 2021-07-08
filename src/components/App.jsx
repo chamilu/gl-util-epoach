@@ -7,6 +7,7 @@ import Time from "./Time";
 import Menu from "./Menu";
 import Quotes from "./Quotes";
 import DateToEpoch from "./DateToEpoch";
+import EpochToDate from "./EpochToDate";
 import SecondsToDate from "./SecondsToDate";
 import TimeToMilliSec from "./TimeToMilliSec";
 import MilliSecToTime from "./MilliSecToTime";
@@ -27,6 +28,8 @@ const App = () => {
             </div>
             <div style={{ display: view === VIEWS.REVERSE ? "block" : "none" }}>
                 <DateToEpoch />
+                <EpochToDate />
+                <div className="margin-b-60"></div>
                 <TimeToMilliSec />                
                 <MilliSecToTime />
             </div>

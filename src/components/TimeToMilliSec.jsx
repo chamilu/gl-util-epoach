@@ -68,7 +68,7 @@ const TimeToMilliSec = () => {
                     />
                 </div>
 
-                <div style={{ fontSize: "40px", color: "#fff", float: "left" }}>
+                <div className="separator">
                     :
                 </div>
 

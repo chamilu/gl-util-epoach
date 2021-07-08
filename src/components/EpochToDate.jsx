@@ -3,7 +3,9 @@ import moment from "moment";
 
 import Utils from "../utils";
 
-const DateToEpoch = () => {
+const EpochToDate = () => {
+    const getBaseDate = () => moment("1970-01-01", "YYYY-MM-DD");
+
     const getEpochDate = (value) => {
         if (value) {
             const providedDate = moment(value, "YYYY-MM-DD");
@@ -12,9 +14,11 @@ const DateToEpoch = () => {
         }
     };
 
+    const convertEpochToDate = (epoch) => getBaseDate().add(Number(epoch),'days').format('YYYY-MM-DD');
+
     const [state, setState] = useState({
         epochDate: getEpochDate(moment().format("YYYY-MM-DD")),
-        dateText: moment().format("YYYY-MM-DD")
+        dateText: convertEpochToDate(getEpochDate(moment().format("YYYY-MM-DD")))
     });
 
     const onTextClick = (textToCopy) => {
@@ -41,20 +45,19 @@ const DateToEpoch = () => {
 
     const onDateChange = (e) => {
         const { value } = e.target;
-        const isValidDate = moment(value, "YYYY-MM-DD").isValid();
+        const isValid = value && String(value).length === 5 && !isNaN(value);
 
         setState({
             ...state,
-            dateText: value,
-            epochDate:
-                isValidDate && value.length === 10 ? getEpochDate(value) : "-"
+            dateText: isValid ? convertEpochToDate(value) : "-",
+            epochDate: value
         });
     };
 
     return (
         <div className="margin-b" style={{ overflow: "hidden" }}>
             <div className="field">
-                Date: <span className="field-notice"> {state.stateText}</span>
+                {/* Epoch Date: <span className="field-notice"> {state.stateText}</span> */}
             </div>
 
             <div>
@@ -62,8 +65,8 @@ const DateToEpoch = () => {
                     <input
                         className="text epoch-date"
                         type="text"
-                        value={state.dateText}
-                        maxLength="10"
+                        value={state.epochDate}
+                        maxLength="5"
                         placeholder="YYYY-MM-DD"
                         onChange={onDateChange}
                     />
@@ -75,15 +78,15 @@ const DateToEpoch = () => {
 
                 <div
                     className="big date-to-epoch"
-                    onClick={(e) => onTextClick(state.epochDate)}
+                    onClick={(e) => onTextClick(state.dateText)}
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
                 >
-                    {state.epochDate}
+                    {state.dateText}
                 </div>
             </div>
         </div>
     );
 };
 
-export default DateToEpoch;
+export default EpochToDate;
