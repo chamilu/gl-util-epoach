@@ -45,7 +45,7 @@ const Time = () => {
     };
 
     return (
-        <div className="margin-b">
+        <div className="margin-b-20">
             <div className="field">
                 Time: <span className="field-notice"> {state.stateText}</span>
             </div>
