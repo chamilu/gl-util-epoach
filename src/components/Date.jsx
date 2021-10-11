@@ -49,7 +49,7 @@ const Date = () => {
     };
 
     return (
-        <div className="margin-b">
+        <div className="margin-b-20">
             <div className="field">
                 Date: <span className="field-notice"> {state.stateText}</span>
             </div>
